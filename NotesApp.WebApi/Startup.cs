@@ -7,6 +7,7 @@ using NotesApp.Application;
 using NotesApp.Application.Common.Mappings;
 using NotesApp.Application.Interfaces;
 using NotesApp.Persistence;
+using NotesApp.WebApi.Middleware;
 using System.Reflection;
 
 namespace NotesApp.WebApi
@@ -49,6 +50,7 @@ namespace NotesApp.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
