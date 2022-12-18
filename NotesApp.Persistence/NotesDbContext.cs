@@ -1,11 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NotesApp.Application.Interfaces;
 using NotesApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NotesApp.Persistence.EntityTypeConfigurations;
 
 namespace NotesApp.Persistence
 {
@@ -19,6 +15,7 @@ namespace NotesApp.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new NoteConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

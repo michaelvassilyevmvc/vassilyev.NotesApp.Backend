@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NotesApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NotesApp.Persistence.EntityTypeConfigurations
 {
@@ -14,7 +9,7 @@ namespace NotesApp.Persistence.EntityTypeConfigurations
         public void Configure(EntityTypeBuilder<Note> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.HasIndex(x=>x.Id).IsUnique();
+            builder.HasIndex(x => x.Id).IsUnique();
             builder.Property(x => x.Title).HasMaxLength(250);
         }
     }
